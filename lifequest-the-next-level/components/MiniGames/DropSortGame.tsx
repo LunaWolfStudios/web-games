@@ -32,7 +32,7 @@ export const DropSortGame: React.FC<DropSortGameProps> = ({ levelData, onComplet
   const [wrongItems, setWrongItems] = useState<DropSortItem[]>([]);
 
   // Refs
-  const requestRef = useRef<number>();
+  const requestRef = useRef<number>(0);
   const speedRef = useRef<number>(0.06); 
 
   useEffect(() => {

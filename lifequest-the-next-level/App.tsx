@@ -29,7 +29,13 @@ const App: React.FC = () => {
 
   // --- Helpers ---
   
-  const calculateStars = (insightCount: number) => Math.min(3, Math.floor(insightCount / 3));
+  const calculateStars = (score: number) => {
+    // Thresholds: 1000, 2000, 3000
+    if (score >= 3000) return 3;
+    if (score >= 2000) return 2;
+    if (score >= 1000) return 1;
+    return 0;
+  };
 
   // --- Handlers ---
 
@@ -67,14 +73,30 @@ const App: React.FC = () => {
   const handleGameComplete = (result: GameResult) => {
     setLastGameResult(result);
     
-    setStats(prev => ({ 
-      ...prev, 
-      score: prev.score + result.score 
-    }));
+    setStats(prev => {
+      const newScore = prev.score + result.score;
+      const newStarCount = calculateStars(newScore);
+      
+      // Handle Insight
+      let newInsights = prev.insights;
+      if (result.insightRewardId && !prev.insights.includes(result.insightRewardId)) {
+          newInsights = [...prev.insights, result.insightRewardId];
+          // Side effect: Show insight modal
+          setJustUnlockedInsight(result.insightRewardId);
+      }
 
-    if (result.insightRewardId && !stats.insights.includes(result.insightRewardId)) {
-        triggerUnlock(result.insightRewardId);
-    }
+      // Side effect: Show star modal
+      if (newStarCount > prev.stars) {
+          setJustUnlockedStar(newStarCount);
+      }
+
+      return { 
+        ...prev, 
+        score: newScore,
+        stars: newStarCount,
+        insights: newInsights
+      };
+    });
 
     // Go to AAR instead of Chat immediately
     setView('AAR');
@@ -91,18 +113,14 @@ const App: React.FC = () => {
 
   const triggerUnlock = (insightId: string) => {
     setStats(prev => {
-      const newInsights = [...prev.insights, insightId];
-      const newStarCount = calculateStars(newInsights.length);
-      
-      // Trigger Star Popup if we gained a star
-      if (newStarCount > prev.stars) {
-          setJustUnlockedStar(newStarCount);
-      }
+      if (prev.insights.includes(insightId)) return prev;
 
+      const newInsights = [...prev.insights, insightId];
+      // Score doesn't change here, so stars shouldn't change
+      
       return {
         ...prev,
-        insights: newInsights,
-        stars: newStarCount
+        insights: newInsights
       };
     });
     setJustUnlockedInsight(insightId);
