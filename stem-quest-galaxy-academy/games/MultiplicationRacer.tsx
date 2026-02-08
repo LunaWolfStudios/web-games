@@ -205,7 +205,7 @@ const MultiplicationRacer: React.FC<MultiplicationRacerProps> = ({ onExit }) => 
       {/* Control Deck */}
       <div className="h-1/3 bg-slate-900 border-t border-slate-700 p-4 flex flex-col items-center justify-center relative z-20">
          {isPlaying && !isGameOver ? (
-             <div className="w-full max-w-2xl animate-in fade-in slide-in-from-bottom-10">
+             <div className="w-full max-w-2xl animate-[fadeIn_0.5s_ease-out_forwards]">
                  <div className="text-center mb-6">
                      <span className="text-6xl font-bold text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
                          {question.a} × {question.b} = ?

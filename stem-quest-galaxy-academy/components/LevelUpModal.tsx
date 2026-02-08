@@ -8,8 +8,8 @@ const LevelUpModal: React.FC = () => {
   if (!showLevelUp) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm animate-in fade-in duration-300">
-      <div className="relative bg-slate-900 border-2 border-yellow-400 rounded-2xl p-8 max-w-md w-full text-center shadow-[0_0_50px_rgba(250,204,21,0.5)] transform animate-in zoom-in-95 duration-300">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm animate-[fadeIn_0.3s_ease-out_forwards]">
+      <div className="relative bg-slate-900 border-2 border-yellow-400 rounded-2xl p-8 max-w-md w-full text-center shadow-[0_0_50px_rgba(250,204,21,0.5)] transform animate-[zoomIn_0.3s_ease-out_forwards]">
         
         {/* Glow effect behind */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-yellow-500/20 rounded-full blur-3xl -z-10"></div>

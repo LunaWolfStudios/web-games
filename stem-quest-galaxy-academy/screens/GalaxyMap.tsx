@@ -109,7 +109,7 @@ const GalaxyMap: React.FC<GalaxyMapProps> = ({ onNavigate }) => {
       <div className="min-h-screen pt-28 px-4 pb-24 flex flex-col items-center">
         <TopBar />
         
-        <div className="text-center mb-10 animate-in fade-in slide-in-from-top-10 duration-700 mt-4">
+        <div className="text-center mb-10 mt-4 animate-[fadeIn_0.7s_ease-out_forwards]">
           <h1 className="text-4xl md:text-6xl font-display font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-blue-200 mb-4 drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]">
             GALAXY MAP
           </h1>
@@ -118,7 +118,7 @@ const GalaxyMap: React.FC<GalaxyMapProps> = ({ onNavigate }) => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl mx-auto animate-[fadeIn_1s_ease-out_forwards]">
           {PLANETS.map((planet, index) => {
             const isLocked = userStats.level < planet.unlockLevel;
             const progress = gameProgress[planet.id] || { stars: 0, highScore: 0, played: false };
@@ -202,7 +202,7 @@ const GalaxyMap: React.FC<GalaxyMapProps> = ({ onNavigate }) => {
         {/* Coming Soon Modal */}
         {comingSoonPlanet && (
             <div className="fixed inset-0 z-[60] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-                <div className="bg-slate-900 border-2 border-cyan-500 rounded-2xl p-8 max-w-sm w-full text-center relative overflow-hidden">
+                <div className="bg-slate-900 border-2 border-cyan-500 rounded-2xl p-8 max-w-sm w-full text-center relative overflow-hidden animate-[zoomIn_0.3s_ease-out_forwards]">
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent"></div>
                     <Construction className="w-16 h-16 text-cyan-400 mx-auto mb-4" />
                     <h2 className="text-2xl font-display font-bold text-white mb-2">Under Construction</h2>

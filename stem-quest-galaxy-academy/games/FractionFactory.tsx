@@ -194,11 +194,11 @@ const FractionFactory: React.FC<FractionFactoryProps> = ({ onExit }) => {
              {isCorrect !== null && (
                <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
                  {isCorrect ? (
-                    <div className="bg-green-500/90 rounded-full p-4 animate-in zoom-in spin-in-12">
+                    <div className="bg-green-500/90 rounded-full p-4 animate-[popIn_0.3s_ease-out_forwards]">
                         <Check className="w-16 h-16 text-white" />
                     </div>
                  ) : (
-                    <div className="bg-red-500/90 rounded-full p-4 animate-in zoom-in shake">
+                    <div className="bg-red-500/90 rounded-full p-4 animate-[popIn_0.3s_ease-out_forwards]">
                         <span className="text-4xl font-bold text-white">X</span>
                     </div>
                  )}

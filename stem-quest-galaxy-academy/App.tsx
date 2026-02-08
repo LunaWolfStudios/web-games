@@ -15,7 +15,7 @@ const AppContent: React.FC = () => {
   const [currentScreen, setCurrentScreen] = useState<Screen>('HOME');
 
   return (
-    <div className="relative min-h-screen bg-slate-900 text-white font-sans selection:bg-cyan-500 selection:text-black">
+    <div className="relative h-screen w-full bg-slate-900 text-white font-sans selection:bg-cyan-500 selection:text-black flex flex-col overflow-hidden">
       {/* Background stays persistent unless inside a game that needs its own background */}
       {currentScreen === 'HOME' && <StarryBackground />}
       
@@ -23,7 +23,7 @@ const AppContent: React.FC = () => {
       <LevelUpModal />
 
       {/* Screen Router */}
-      <main className="relative z-10 h-full">
+      <main className="flex-1 relative z-10 w-full h-full">
         {currentScreen === 'HOME' && (
           <GalaxyMap onNavigate={setCurrentScreen} />
         )}
