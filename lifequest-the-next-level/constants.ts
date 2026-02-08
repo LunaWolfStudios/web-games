@@ -6,8 +6,7 @@ export const MENTORS: Mentor[] = [
   { id: 'leo', name: 'Coach Leo', avatar: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=200&q=80', bio: 'Energetic and encouraging!' },
   { id: 'maya', name: 'Guide Maya', avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80', bio: 'Calm, wise, and patient.' },
   { id: 'kenji', name: 'Sensei Kenji', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80', bio: 'Focuses on discipline and clarity.' },
-  { id: 'sofia', name: 'Mentor Sofia', avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80', bio: 'Warm, friendly, and practical.' },
-  { id: 'sam', name: 'Captain Sam', avatar: 'https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=200&q=80', bio: 'Adventurous and direct.' },
+  { id: 'sofia', name: 'Mentor Sofia', avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80', bio: 'Warm, friendly, and practical.' }
 ];
 
 // --- Knowledge Base (Insights) ---
