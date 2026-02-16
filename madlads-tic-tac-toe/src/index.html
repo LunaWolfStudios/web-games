@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Madlads Tic Tac Toe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              neon: {
+                blue: '#00f3ff',
+                pink: '#ff00ff',
+                green: '#0aff00',
+                yellow: '#fcee0a',
+                purple: '#bf00ff', // Neon Dark Purple (Electric Purple)
+                orange: '#ff5500', // Neon Orange (International Orange)
+                m: '#2962ff', // M: Darker Neon Blue (Royal Blue)
+                s: '#00e676', // S: Darker Neon Green (Emerald Neon)
+                t: '#ff0040', // T: Darker Neon Red (Crimson)
+                k: '#e2e8f0', // K: Electric Silver
+                dark: '#050510',
+                grid: '#1a1a2e'
+              }
+            },
+            animation: {
+              'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'glow': 'glow 2s ease-in-out infinite alternate',
+              'popup': 'popup 1.5s ease-out forwards',
+            },
+            keyframes: {
+              glow: {
+                '0%': { boxShadow: '0 0 5px #00f3ff, 0 0 10px #00f3ff' },
+                '100%': { boxShadow: '0 0 20px #00f3ff, 0 0 30px #00f3ff' },
+              },
+              popup: {
+                '0%': { opacity: '0', transform: 'scale(0.5)' },
+                '15%': { opacity: '1', transform: 'scale(1.1)' },
+                '25%': { transform: 'scale(1)' },
+                '75%': { opacity: '1', transform: 'scale(1)' },
+                '100%': { opacity: '0', transform: 'scale(1.1) translateY(-20px)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #050510;
+        color: white;
+        overflow: hidden; /* Prevent scrolling, handle in-app */
+        font-family: 'Courier New', Courier, monospace;
+      }
+      /* Custom Scrollbar for action panel if needed */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #000;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333;
+        border-radius: 3px;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
