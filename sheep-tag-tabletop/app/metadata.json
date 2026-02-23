@@ -1,0 +1,5 @@
+{
+  "name": "Sheep Tag",
+  "description": "A web-based asymmetric strategy board game where Sheep build defenses to survive against hunting Wolves.",
+  "requestFramePermissions": []
+}
